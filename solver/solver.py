@@ -3,10 +3,9 @@ from solver.sudoku import Sudoku
 
 
 class Solver:
-    def __init__(self, sudoku: Sudoku, debug: bool = False):
+    def __init__(self, sudoku: Sudoku):
         self.initial_sudoku = sudoku
         self.sudoku_stack: list[Sudoku] = [self.initial_sudoku]
-        self.debug = debug
         # state for stats:
         self.iterations = 0
         self.guesses = 0
