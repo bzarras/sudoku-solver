@@ -67,13 +67,13 @@ class Sudoku:
 
     def fill_until_conflict(self) -> OpenSquare | None:
         open_squares = self._open_squares()
-        board_candidates: list[OpenSquare] = []
+        sorted_squares: list[OpenSquare] = []
         for i, j in open_squares:
             candidates = self._get_candidates_for_square(i, j)
-            heappush(board_candidates, candidates)
+            heappush(sorted_squares, candidates)
         sq: OpenSquare | None = None
-        while board_candidates:
-            sq = heappop(board_candidates)
+        while sorted_squares:
+            sq = heappop(sorted_squares)
             if len(sq) == 1:
                 self.board[sq.row][sq.col] = sq.candidates[0]
             else:
