@@ -9,7 +9,6 @@ def main():
     solver = Solver(sudoku=sudoku)
     solver.solve()
     solver.print_stats()
-    solver.print_solution_trail()
 
 
 if __name__ == "__main__":
